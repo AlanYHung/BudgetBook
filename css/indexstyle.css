@@ -1,0 +1,24 @@
+/* Centers and formats welcome text */
+header{
+  font-size: xxx-large;
+  font-weight: bolder;
+  height: 100px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+body{
+  background-image: url("../images/indeximages/wood-background.jpg");
+}
+
+/* Centers and draws the Cover of the Budget Book on the Home Page */
+.book-pages{
+  position: relative;
+  width: 300px;
+  height: 400px;
+  margin: 100px auto;
+  background-image: url("../images/indeximages/BudgetBookCover.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
