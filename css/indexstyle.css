@@ -1,3 +1,7 @@
+/* ========================================== */ 
+/* ========== This styles the page ========== */
+/* ========================================== */ 
+
 /* Centers and formats welcome text */
 header{
   font-size: xxx-large;
@@ -12,18 +16,68 @@ body{
   background-image: url("../images/indeximages/wood-background.jpg");
 }
 
+#copyright{
+  margin-top: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+
+
+
+/* ========================================== */ 
+/* ======= This styles the navigation ======= */
+/* ========================================== */ 
+
+#homepage-nav{
+  height: 30px;
+  /* TODO: make the navigation readable without standing out */
+  background-color: aliceblue;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#homepage-nav-options{
+  display: flex;
+}
+
+.homepage-nav-links{
+  padding: 0px 10px;
+  font-size: x-large;
+  font-weight: bolder;
+}
+
+
+
+/* ========================================== */ 
+/* === This is the Book Animation Section === */
+/* ========================================== */ 
+
+/* Centers the combined book cover and book page */
+#homepage-img{
+  margin: 70px auto;
+  position: relative;
+  width: 375px;
+  height: 500px;
+}
+
 /* Centers and Budget Book image in Home Page and adds Opening Effect */
 /* Code taken from https://www.youtube.com/watch?v=pDH7qmYKyEQ */
 /* Author: Rinkans */
 .book-pages{
-  position: relative;
-  width: 375px;
-  height: 500px;
-  margin: 100px auto;
+  /* width and height at 100% fills up the entire section box */
+  width: 100%;      
+  height: 100%;
   background-image: url("https://via.placeholder.com/375x500");
   background-repeat: no-repeat;
+  /* This resizes the background IMAGE to fill the whole box */
   background-size: cover;
+  /* This transform preserves the 3d effects */
   transform-style: preserve-3d;
+  /* Perspective gives the tranformation a more life-like animation  */
   perspective: 500px;
 }
 
@@ -34,10 +88,13 @@ body{
   background-image: url("../images/indeximages/BudgetBookCover.png");
   background-repeat: no-repeat;
   background-size: cover;
+  /* this tells where to start doing the transform; '0' is the x-axis transformation that starts it on the left edge, 50% is the y-axis tranformation */
   transform-origin: 0 50%;
+  /* 'all' applies the transition to the entire element, '0.3s' is the duration of the transition, 'ease' is the speed of the animation */
   transition: all 0.3s ease;
 }
 
 .book-pages:hover .book-cover{
-  transform: rotateY(-60deg);
+  /* This flips the cover open to a set degree (i.e. 70 deg) -- the 'negative sign' makes it come out of the screen (a positive deg will go into the screen) */
+  transform: rotateY(-70deg);
 }
