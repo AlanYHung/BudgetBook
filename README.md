@@ -14,6 +14,10 @@ v. 0.1.0
 
 - [Budget Book](index.html)
 - [Instructor: Lena Eivy](mailto:lena@codefellows.com)
+- [Wireframes](images/indeximages/budgetbookwireframes.png)
+- [Domain Model](images/indeximages/budgetbookdomain.png)
+- [Trello Project Board](https://trello.com/invite/b/0nRgTC8w/a841a66df4a006aa740ec38a44af92d3/budget-book)
+
 
 ### Reflections and Comments
 
@@ -23,4 +27,4 @@ v. 0.1.0
 - 11/13/2020 (Skeleton of HTML Files Setup)
 - 11/15/2020 (Created Book Background in Paint and set up Header and Book div Section in HTML Document Model -AYH)
 - 11/15/2020 (Added Base HomePage Formatting in CSS for Header and Book div Section -AYH)
-- 11/15/2020 (Added Cookie functionality in javascript for userName and dynamic Greeting)
+- 11/15/2020 (Added Cookie functionality in javascript for userName and dynamic Greeting -AYH)
