@@ -14,8 +14,8 @@ v. 0.1.0
 
 - [Budget Book](index.html)
 - [Instructor: Lena Eivy](mailto:lena@codefellows.com)
-- [Wireframes](images/indeximages/budgetbookwireframes.png)
-- [Domain Model](images/indeximages/budgetbookdomain.png)
+- [Wireframes](images/budgetbookwireframes.png)
+- [Domain Model](images/budgetbookdomain.png)
 - [Trello Project Board](https://trello.com/invite/b/0nRgTC8w/a841a66df4a006aa740ec38a44af92d3/budget-book)
 
 
