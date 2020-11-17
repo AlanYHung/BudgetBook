@@ -8,7 +8,7 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.1.0
+v. 0.3.0
 
 ### Links and Resources
 
@@ -17,6 +17,7 @@ v. 0.1.0
 - [Wireframes](images/budgetbookwireframes.png)
 - [Domain Model](images/budgetbookdomain.png)
 - [Trello Project Board](https://trello.com/invite/b/0nRgTC8w/a841a66df4a006aa740ec38a44af92d3/budget-book)
+- [Book Cover Animation by Rinkans Youtuber](https://www.youtube.com/watch?v=pDH7qmYKyEQ)
 
 
 ### Reflections and Comments
@@ -28,3 +29,6 @@ v. 0.1.0
 - 11/15/2020 (Created Book Background in Paint and set up Header and Book div Section in HTML Document Model -AYH)
 - 11/15/2020 (Added Base HomePage Formatting in CSS for Header and Book div Section -AYH)
 - 11/15/2020 (Added Cookie functionality in javascript for userName and dynamic Greeting -AYH)
+- 11/16/2020 (Added User Form Entry Fields -Driver:AYH & Navigator:NM)
+- 11/16/2020 (Added Category Form Entry Fields -Driver:AYH & Navigator:NM)
+- 11/17/2020 (Added Book Cover Animation -AYH)
