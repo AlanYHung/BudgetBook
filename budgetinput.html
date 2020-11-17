@@ -1,72 +1,81 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Budget Form</title>
-    <link rel="stylesheet" href="./css/reset.css" type="text/css">
-    <link rel="stylesheet" href="./css/budgetinputstyle.css" type="text/css">
-  </head>
-  <body>
-    <header></header>
-    <main>
-      <!-- User Profile:  Include User Name, Income (time of deposits), Category Mgmt -->
-      <section>
-        <form id="user-form">
-          <fieldset>
-            <label for="user-name">Name:</label>
-            <input id="user-name-input-id" type="text" name="user-name-input">
-            <label for="user-income">Income Amount:</label>
-            <input id="user-income-input-id" type="text" name="user-income-input">
-            <label for="income-frequency">Income Frequency:</label>
-            <select name="income-frequency-input" id="income-frequency-input-id">
-              <option value="income-weekly">Weekly</option>
-              <option value="income-biweekly">Biweekly</option>
-              <option value="income-monthly">Monthly</option>
-              <option value="income-bimonthly">Bimonthly</option>
-              <option value="income-no-frequency">No Frequency</option>
-            </select>
-            <input id="input-based-on-income-frequency">
-            <input id="submit-button-id" type="submit" name="submit-button">
-          </fieldset>
-        </form>
-      </section>
-      <section>
-        <form id="category-form">
-          <fieldset>
-            <label for="category-selection">Category:</label>
-            <select name="category-selection-options" id="category-selection-options-id">
-              <option value="category-income">Income</option>
-              <option value="category-housing">Housing</option>
-              <option value="category-food">Food</option>
-              <option value="category-utilities">Utility</option>
-              <option value="category-loans">Loans</option>
-              <option value="category-miscellaneous">Miscellaneous</option>
-              <option value="category-add-category">Add Category</option>
-              <option value="category-remove-category">Remove Category</option>
-            </select>
-            <section id="add/remove-category">
-              <!-- This is code for adding a new category -->
-              
-              <!-- <label for="category-item-designation">Is this itemized or a total?</label>
+
+<head>
+  <title>Budget Form</title>
+  <link rel="stylesheet" href="./css/reset.css" type="text/css">
+  <link rel="stylesheet" href="./css/budgetinputstyle.css" type="text/css">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+  <header></header>
+  <main>
+    <!-- User Profile:  Include User Name, Income (time of deposits), Category Mgmt -->
+    <div id="both-forms">
+
+      <form id="user-form">
+        <fieldset id="user-fieldset">
+          <label for="user-name">Name:</label>
+          <input id="user-name-input-id" type="text" name="user-name-input">
+          <label for="user-income">Income Amount:</label>
+          <input id="user-income-input-id" type="text" name="user-income-input">
+          <label for="income-frequency">Income Frequency:</label>
+          <select name="income-frequency-input" id="income-frequency-input-id">
+            <option value="income-weekly">Weekly</option>
+            <option value="income-biweekly">Biweekly</option>
+            <option value="income-monthly">Monthly</option>
+            <option value="income-bimonthly">Bimonthly</option>
+            <option value="income-no-frequency">No Frequency</option>
+          </select>
+          <input id="input-based-on-income-frequency">
+          <input id="submit-button-id" type="submit" name="submit-button">
+        </fieldset>
+      </form>
+      <form id="category-form">
+        <fieldset id='category-fieldset'>
+          <label for="category-selection">Category:</label>
+          <select name="category-selection-options" id="category-selection-options-id">
+            <option value="category-income">Income</option>
+            <option value="category-housing">Housing</option>
+            <option value="category-food">Food</option>
+            <option value="category-utilities">Utility</option>
+            <option value="category-loans">Loans</option>
+            <option value="category-miscellaneous">Miscellaneous</option>
+            <option value="category-add-category">Add Category</option>
+            <option value="category-remove-category">Remove Category</option>
+          </select>
+<!--           <section id="add-remove-category"> -->
+            <!-- This is code for adding a new category -->
+            <!-- <label for="category-item-designation">Is this itemized or a total?</label>
               <input id="itemized-input-id" type="radio" name="itemized-input" value="itemized-amount">
               <label for="itemized-amount-label">Itemized Amount</label>
               <input id="total-input-id" type="radio" name="total-input" value="cumulative-total-amount">
               <label for="total-amount-label">Cumulative Total Amount</label> -->
-            </section>
-            <label for="category-amount">Transaction Amount</label>
-            <input id="category-amount-input-id" type="text" name="category-amount-input">
-            <label for="category-amount-date">Date of Transaction</label>
-            <input id="category-date-selection-id" type="date" name="category-date-selection">
-            <label for="category-transaction-description">Transaction Description</label>
-            <input id="category-transaction-description-input" type="text" name="category-transaction-description-input">
-            <input id="category-form-submit-id" type="submit" name="category-form-submit">
-          </fieldset>
-        </form>
-      </section>
-    </main>
-    <footer>
-      <div>Authored &copy; 2020 by Team Thin Mints</div>
-    </footer>
-    <script src="./js/app.js" type="text/javascript"></script>
-    <script src="./js/budgetinputjavascript.js" type="text/javascript"></script>
-  </body>
+<!--           </section> -->
+          <label for="category-amount">Transaction Amount</label>
+          <input id="category-amount-input-id" type="text" name="category-amount-input">
+          <label for="category-amount-date">Date of Transaction</label>
+          <input id="category-date-selection-id" type="date" name="category-date-selection">
+          <!-- unsure why Transaction Desc. is not displaying: -->
+          <label for="category-transaction-description">Transaction Description</label>
+          <input id="category-transaction-description-input" type="text" name="category-transaction-description-input">
+          <input id="category-form-submit-id" type="submit" name="category-form-submit">
+        </fieldset>
+      </form>
+    </section>
+  </div>
+  <div id="notebook-img-div">
+    <img id="notebook-image" src="images/budgetinputimages/notebookpng1500px.png" alt="a blank open notebook">
+  </div>
+  </main>
+
+  <footer>
+    <div>Authored &copy; 2020 by Team Thin Mints</div>
+  </footer>
+  <script src="./js/app.js" type="text/javascript"></script>
+  <script src="./js/budgetinputjavascript.js" type="text/javascript"></script>
+</body>
+
 </html>
