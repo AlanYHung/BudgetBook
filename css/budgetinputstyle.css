@@ -1,0 +1,57 @@
+body{
+    background-image: url("../images/indeximages/wood-background.jpg");
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+#both-forms{
+/*     display: flex;
+    align-items: center;
+    justify-content: center; */
+    z-index: 3;
+}
+
+#user-fieldset{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 90px;
+    z-index: 2;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-180%, -130%);
+}
+
+#category-fieldset{
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    padding: 90px;
+    z-index: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-5%, -125%);
+}
+
+#notebook-img-div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+}
+
+#notebook-image{
+    max-height: 800px;
+    z-index: -2;
+}
+
+#submit-button-id{
+    border:solid 4px #41403E;
+    background:#F0F0D8;
+}
