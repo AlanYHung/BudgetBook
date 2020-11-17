@@ -1,3 +1,5 @@
+'use strict';
+
 // Stores new user name into cookie or retrieves user name from cookie for personal greeting.
 function userGreetingFromCookie(){
   //ugfc = userGreetingFromCookie shows variables belong to this function
@@ -21,6 +23,8 @@ function userGreetingFromCookie(){
     ugfcSplitCookieData = ugfcGetCookie.split(';');
     ugfcSplitCookieDataItem = ugfcSplitCookieData[0].split('=');
     ugfcHeaderElement.textContent = `Welcome Back ${ugfcSplitCookieDataItem[1]}!!`;
+    // This section allows the Summary Page link on the homepage to appear/disappear based on user's cookie status; Summary Page link will appear if the user is a return customer (e.g. has cookie)
+    elementCreator('homepage-summary-link', 'a', 'Summary Page', 'href', './budgetoutput.html')    
   }
 }
 
