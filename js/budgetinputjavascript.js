@@ -13,16 +13,24 @@ function categoryRender() {
   }
 }
 
+function summaryPageLink(){
+  if(incomeInputObject.length + expenseInputObject.length > 1){
+    elementCreator('budgetinput-summary-link', 'a', 'Summary Page', 'href', './budgetoutput.html')
+  }
+}
+
 function userFormSubmitHandler(ufsEvent) {
   ufsEvent.preventDefault();
-  incomeInputObject.push(new IncomeObject('Income', ufsEvent.target.userIncomeInput.value, ufsEvent.target.incomeFrequencyInput.value, ufsEvent.target.incomeStartDateInput.value));
+  incomeInputObject.push(new IncomeObject('Income', ufsEvent.target.userIncomeInput.value));
   userFieldsetElement.reset();
+  summaryPageLink();
 }
 
 function categoryFormSubmitHandler(cfsEvent) {
   cfsEvent.preventDefault();
   expenseInputObject.push(new ExpenseObject(cfsEvent.target.categorySelectionOptions.value,cfsEvent.target.categoryAmountInput.value,document.getElementById('category-recurring-expense-input-id').checked,cfsEvent.target.categoryDateSelection.value,cfsEvent.target.categoryTransactionDescriptionInput.value))
   categoryFieldsetElement.reset();
+  summaryPageLink();
 }
 
 bijCategoryObjectArray = defaultCategoryCreator();

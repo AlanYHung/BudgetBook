@@ -30,11 +30,9 @@ function elementCreator(ecParentId,   ecChildElement, ecChildContent = '', ecAtt
 // io = incomeObject
 // ffi = income form field input
 
-function IncomeObject (ffiCategory, ffiAmount, ffiFrequency, ffiStartingDate) {
+function IncomeObject (ffiCategory, ffiAmount) {
     this.ioCategory = ffiCategory;
     this.ioAmount = ffiAmount;
-    this.ioFrequency = ffiFrequency;
-    this.ioStartingDate = ffiStartingDate;
 
     incomeObjectArray.push(this);
 }
@@ -63,14 +61,11 @@ function CategoryObject (ffcName, ffcType, ffcTrackingStyle) {
 }
 
 function defaultCategoryCreator() {
-    new CategoryObject ('Income', 'income', 'line-item');
     new CategoryObject ('Housing', 'expense', 'line-item');
     new CategoryObject ('Food', 'expense', 'line-item');
     new CategoryObject ('Utilities', 'expense', 'line-item');
     new CategoryObject ('Loans', 'expense', 'line-item');
     new CategoryObject ('Miscellaneous', 'expense', 'line-item');
-    new CategoryObject ('Add Category', '', '');
-    new CategoryObject ('Remove Category', '', '');
 
     return categoryObjectArray;
 }
