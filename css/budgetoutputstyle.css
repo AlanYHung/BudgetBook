@@ -1,0 +1,30 @@
+body{
+    background-image: url("../images/indeximages/wood-background.jpg");
+    font-family: 'Noto Sans JP', sans-serif;
+  }
+
+  header{
+    font-size: xxx-large;
+    font-weight: bolder;
+    height: 100px; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  #copyright{
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+  }
+
+  th,  td {
+    padding: 10px;
+    margin: 1px;
+    border: 2px solid black;
+    text-align: center;
+    background-color: rgb(63, 41, 13);;
+    color: rgb(247, 236, 220);
+}
