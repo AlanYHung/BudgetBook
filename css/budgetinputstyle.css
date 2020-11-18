@@ -1,57 +1,96 @@
+/* ========================================== */ 
+/* ========= Document Layout Section ======== */
+/* ========================================== */ 
+
 body{
-    background-image: url("../images/indeximages/wood-background.jpg");
-    font-family: 'Noto Sans JP', sans-serif;
-  }
+  background-image: url("../images/indeximages/wood-background.jpg");
+  font-family: 'Noto Sans JP', sans-serif;
+}
 
+/* Centers Header and adds Translucent Label Backgroud */
+header{
+  margin: 40px auto 20px auto;
+  width: 1200px;
+  font-size: xx-large;
+  background-color: rgba(229, 238, 238, 0.5);
+  border-radius: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Centers form background img & both forms */
 #both-forms{
-/*     display: flex;
-    align-items: center;
-    justify-content: center; */
-    z-index: 3;
+  background: url("../images/budgetinputimages/notebookpng1500px.png") no-repeat;
+  background-size: cover;
+  width: 1200px;
+  height: 800px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px auto;
+  position: relative;
 }
 
-#user-fieldset{
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    padding: 90px;
-    z-index: 2;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-180%, -130%);
+
+
+/* ========================================== */ 
+/* ========= Form Formatting Section ======== */
+/* ========================================== */ 
+
+/* Sets up the positioning for both forms */
+form{
+  width: 400px;
+  margin: -300px auto 50px auto;
 }
 
-#category-fieldset{
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: space-evenly;
-    padding: 90px;
-    z-index: 1;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-5%, -125%);
+label{
+  margin-bottom: 2px;
 }
 
-#notebook-img-div{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: -1;
+input, select{
+  margin-bottom: 5px;
 }
 
-#notebook-image{
-    max-height: 800px;
-    z-index: -2;
+.form-fieldset{
+  display: grid;
 }
 
-#submit-button-id{
-    border:solid 4px #41403E;
-    background:#F0F0D8;
+.form-title{
+  border: black dotted 1px;
+  background-color: seagreen;
+  height: 60px;
+  font-size: xx-large;
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+/* ========================================== */ 
+/* ======= This styles the navigation ======= */
+/* ========================================== */ 
+
+#budgetinput-nav{
+  height: 30px;
+  background-color: aliceblue;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -0px auto 10px auto;
+  width: 1200px;
+  border-radius: 30px;
+}
+
+#budgetinput-nav-options{
+  display: flex;
+}
+
+.budgetinput-nav-links{
+  padding: 0px 10px;
+  font-size: x-large;
+  font-weight: bolder;
 }
