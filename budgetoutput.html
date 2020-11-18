@@ -6,11 +6,51 @@
     <link rel="stylesheet" href="./css/budgetoutputstyle.css" type="text/css">
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <h1>Budget Summary</h1>
+    </header>
+    <main>
+<!--       <div id="category-table-div">
+        <h2>Budget Breakdown</h2>
+        <table id="category-table">
+                <tbody id="category-data"></tbody>
+                <tr>
+                  <th>Category</th>
+                  <th>Spent So-Far</th>
+                  <th>On-Track Target</th>
+                  <th>Variance</th>
+                  <th>Monthly Target</th>
+                  <th>On-Track?</th>
+                </tr>
+            </table>
+      </div> -->
+      <div id="summary-table-div">
+        <h2>Summary</h2>
+        <table id="summary-table">
+                <tbody id="summary-data"></tbody>
+                <tr>
+                  <th>Total Spent as-of Today:</th>
+                  <th>On-Track Target</th>
+                  <th>Variance</th>
+                  <th>Monthly Budget</th>
+                  <th>On-Track?</th>
+                </tr>
+            </table>
+      </div>
+      <div id="budget-chart-div">
+        <canvas id="budget-chart" width="1464" height="268"></canvas>
+      </div>
+    </main>
     <footer>
       <div>Authored &copy; 2020 by Team Thin Mints</div>
     </footer>
+    <nav id="homepage-nav"> 
+      <ul id="homepage-nav-options">
+        <li class="homepage-nav-links"> <a href="./budgetinput.html">  Form Page </a></li>
+        <li id="homepage-summary-link" class="homepage-nav-links"> </li>
+        <li class="homepage-nav-links"> About Us </li>
+      </ul>
+    </nav>
     <script src="./js/app.js" type="text/javascript"></script>
     <script src="./js/budgetoutputjavascript.js" type="text/javascript"></script>
   </body>
