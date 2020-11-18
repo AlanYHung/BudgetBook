@@ -1,6 +1,8 @@
 'use strict';
 
-
+var incomeObjectArray = [];
+var expenseObjectArray = [];
+var categoryObjectArray = [];
 
 // This function is a generic function that allows creation of element anywhere in the web app; where the child content is optional
 function elementCreator(ecParentId,   ecChildElement, ecChildContent = '', ecAttributeType1 = '', ecAttributeContent1 = '', ecAttributeType2 = '', ecAttributeContent2 = ''){
@@ -21,5 +23,54 @@ function elementCreator(ecParentId,   ecChildElement, ecChildContent = '', ecAtt
   }
 
   ecParentElement.appendChild(ecChildElement);
+}
+
+
+// income parameters: category, amount, frequency, startingdate
+// io = incomeObject
+// ffi = income form field input
+
+function IncomeObject (ffiCategory, ffiAmount, ffiFrequency, ffiStartingDate) {
+    this.ioCategory = ffiCategory;
+    this.ioAmount = ffiAmount;
+    this.ioFrequency = ffiFrequency;
+    this.ioStartingDate = ffiStartingDate;
+
+    incomeObjectArray.push(this);
+}
+
+// eo = expenseObject
+// ffe = expense form field input
+
+function ExpenseObject (ffeCategory, ffeAmount, ffeRecurring, ffeTransactionDate, ffeDescription = '') {
+    this.eoCategory = ffeCategory;
+    this.eoAmount = ffeAmount;
+    this.eoRecurring = ffeRecurring; // boolean 
+    this.eoTransactionDate = ffeTransactionDate;
+    this.eoDescription = ffeDescription;
+
+    expenseObjectArray.push(this);
+}
+
+// ffc = form field category
+function CategoryObject (ffcName, ffcType, ffcTrackingStyle) {
+    this.categoryName = ffcName;
+    this.categoryType = ffcType; //income vs expense
+    this.categoryPaymentTrackingStyle = ffcTrackingStyle; //cumulative or line-item category
+
+    categoryObjectArray.push(this);
+}
+
+function defaultCategoryCreator() {
+    new CategoryObject ('Income', 'income', 'line-item');
+    new CategoryObject ('Housing', 'expense', 'line-item');
+    new CategoryObject ('Food', 'expense', 'line-item');
+    new CategoryObject ('Utilities', 'expense', 'line-item');
+    new CategoryObject ('Loans', 'expense', 'line-item');
+    new CategoryObject ('Miscellaneous', 'expense', 'line-item');
+    new CategoryObject ('Add Category', '', '');
+    new CategoryObject ('Remove Category', '', '');
+
+    return categoryObjectArray;
 }
 
