@@ -42,12 +42,13 @@ function IncomeObject (ffiCategory, ffiAmount, ffiFrequency, ffiStartingDate) {
 // eo = expenseObject
 // ffe = expense form field input
 
-function ExpenseObject (ffeCategory, ffeAmount, ffeRecurring, ffeTransactionDate, ffeDescription = '') {
+function ExpenseObject (ffeCategory, ffeAmount, ffeRecurring, ffeTransactionDate, ffeBudget, ffeDescription = '') {
     this.eoCategory = ffeCategory;
     this.eoAmount = ffeAmount;
     this.eoRecurring = ffeRecurring; // boolean 
     this.eoTransactionDate = ffeTransactionDate;
     this.eoDescription = ffeDescription;
+    this.eoBudget = ffeBudget;
 
     expenseObjectArray.push(this);
 }
