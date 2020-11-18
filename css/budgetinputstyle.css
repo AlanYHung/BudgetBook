@@ -41,7 +41,11 @@ header{
 /* Sets up the positioning for both forms */
 form{
   width: 400px;
-  margin: -300px auto 50px auto;
+  margin: -225px auto 50px auto;
+}
+
+#user-form{
+  margin-top: -400px;
 }
 
 label{
