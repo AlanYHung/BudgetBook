@@ -8,7 +8,7 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.7.0
+v. 0.9.0
 
 ### Links and Resources
 
@@ -42,3 +42,11 @@ v. 0.7.0
 - 11/17/2020 (Added Object Constructors for Income and Expense in javascript -Driver:NM & Navigators:SL & AYH)
 - 11/17/2020 (Added Dynamic Category List in javascript for Budget Category Selection Form -Driver:NM & Navigators:SL & AYH)
 - 11/17/2020 (Added Event Listener and skeleton Handler Functions for the 2 submit buttons -Driver:NM & Navigators:SL & AYH)
+- 11/18/2020 (Finished formatting Forms Page -AYH)
+- 11/18/2020 (Completed Submit Functionality for Forms -AYH)
+- 11/18/2020 (Added Navigation Links to Forms Page -AYH)
+- 11/18/2020 (Finished creating all the sections for the About Us -SL)
+- 11/18/2020 (Finished formatting the About Us Page -SL)
+- 11/18/2020 (Content for About us WIP -SL)
+- 11/18/2020 (Skeleton code for Summary Page html setup -NM)
+- 11/18/2020 (Global variables created in JavaScript -NM)
