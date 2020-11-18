@@ -8,16 +8,18 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.3.0
+v. 0.7.0
 
 ### Links and Resources
 
 - [Budget Book](index.html)
 - [Instructor: Lena Eivy](mailto:lena@codefellows.com)
+- [Miro Whiteboard](https://miro.com/welcomeonboard/r9gMrB6YvnOIibsoL3RpK6PVUs8k8NNaFCLp38SmDC8eGxL0BQQ1JwwRTAkOIjRj)
 - [Wireframes](images/budgetbookwireframes.png)
 - [Domain Model](images/budgetbookdomain.png)
 - [Trello Project Board](https://trello.com/invite/b/0nRgTC8w/a841a66df4a006aa740ec38a44af92d3/budget-book)
 - [Book Cover Animation by Rinkans Youtuber](https://www.youtube.com/watch?v=pDH7qmYKyEQ)
+- [HTML, CSS, JavaScript Reference Guide](https://www.w3schools.com/)
 
 
 ### Reflections and Comments
@@ -32,3 +34,11 @@ v. 0.3.0
 - 11/16/2020 (Added User Form Entry Fields -Driver:AYH & Navigator:NM)
 - 11/16/2020 (Added Category Form Entry Fields -Driver:AYH & Navigator:NM)
 - 11/17/2020 (Added Book Cover Animation -AYH)
+- 11/17/2020 (Added Dynamic Navigation to Homepage & formatted footer -Driver:SL & Navigator:AYH)
+- 11/17/2020 (Added Dynamic Element Creating Function to app.js -Driver:SL & Navigator:AYH)
+- 11/17/2020 (Updated Book Opening img to be Link and changes some of the animation effects -Driver:SL & Navigator:AYH)
+- 11/17/2020 (Added .html skeleton for About Us page -SL)
+- 11/17/2020 (Added Background and formatted forms of budgetinput.html -NM)
+- 11/17/2020 (Added Object Constructors for Income and Expense in javascript -Driver:NM & Navigators:SL & AYH)
+- 11/17/2020 (Added Dynamic Category List in javascript for Budget Category Selection Form -Driver:NM & Navigators:SL & AYH)
+- 11/17/2020 (Added Event Listener and skeleton Handler Functions for the 2 submit buttons -Driver:NM & Navigators:SL & AYH)
