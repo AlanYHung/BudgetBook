@@ -70,3 +70,47 @@ function defaultCategoryCreator() {
     return categoryObjectArray;
 }
 
+
+// This is the local storage functions created by Sang
+function storeObjectsIntoLS(){
+  var stringifiedIncomeObjects = JSON.stringigy(incomeObjectArray);
+  var stringifiedExpenseObjects = JSON.stringify(expenseObjectArray);
+  var stringifiedCategoryObjects = JSON.stringify(categoryObjectArray);
+
+  localStorage.setItem('income', stringifiedIncomeObjects);
+  localStorage.setItem('expense', stringifiedExpenseObjects);
+  localStorage.setItem('category', stringifiedCategoryObjects);
+}
+
+
+function retrieveObjectsFromLS(){
+  var incomeObjectsFromLS = localStorage.getItem('income');
+  var expenseObjectsFromLS = localStorage.getItem('expense');
+  var categoryObjectsFromLS = localStorage.getItem('category');
+
+  var parsedIncomeObjectArray = JSON.parse(incomeObjectsFromLS);
+  var parsedExpenseObjectArray = JSON.parse(expenseObjectsFromLS);
+  var parsedCategoryObjectArray = JSON.parse(categoryObjectsFromLS);
+
+  generateNewObjectArrays(parsedIncomeObjectArray, parsedExpenseObjectArray, parsedCategoryObjectArray);
+}
+
+function generateNewObjectArrays(income, expense, category){
+  incomeObjectArray = [];
+  expenseObjectArray = [];
+  categoryObjectArray = [];
+
+  for (var incomeCounter=0; incomeCounter < income.length; incomeCounter++){
+    new IncomeObject(income[incomeCounter].ioCategory, income[incomeCounter].ioAmount);
+  }
+
+  for (var expenseCounter=0; expenseCounter < expense.length; expenseCounter++){
+    new ExpenseObject(expense[expenseCounter].eoAmount, expense[expenseCounter].eoRecurring, expense[expenseCounter].eoTransactionDate, expense[expenseCounter].eoDescription), expense[expenseCounter].eoBudget);
+  }
+
+  for (var categoryCounter=0; categoryCounter < category.length; categoryCounter++) {
+    new CategoryObject(category[categoryCounter].categoryName, category[categoryCounter].categoryType, category[categoryCounter].categoryPaymentTrackingStyle);
+  }
+
+}
+
