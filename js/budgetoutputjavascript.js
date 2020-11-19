@@ -11,9 +11,10 @@ var summaryCategoryObjectArray = []; */
 /* var insertParent = document.getElementById('summary-table'); */
 
 
-
+// /////////////////////////////
 // DUMMY DATA SAMPLES
 // From here through line 68
+// /////////////////////////////
 function IncomeObject (ffiCategory, ffiAmount,) {
   this.ioCategory = ffiCategory;
   this.ioAmount = ffiAmount;
@@ -43,38 +44,44 @@ new ExpenseObject ('Utilities', 200, 'true', '11/06/2020', 300, '',);
 new ExpenseObject ('Loans', 200, 'true', '11/10/2020', 300, '',);
 new ExpenseObject ('Misc', 600, 'true', '11/03/2020', 1509, '',);
 
+// ffcBudget added manually to replicate pushed data
+function CategoryObject (ffcName, ffcBudget) {
+  this.categoryName = ffcName;
+  this.categoryBudget = ffcBudget;
 
-// ffc = form field category
-function CategoryObject (ffcName, ffcType, ffcTrackingStyle) {
+  categoryObjectArray.push(this);
+}
+
+
+// old category constructor
+/* function CategoryObject (ffcName, ffcType, ffcTrackingStyle) {
   this.categoryName = ffcName;
   this.categoryType = ffcType; //income vs expense
   this.categoryPaymentTrackingStyle = ffcTrackingStyle; //cumulative or line-item category
 
   categoryObjectArray.push(this);
-}
+} */
+
 
 function defaultCategoryCreator() {
-  new CategoryObject ('Housing', 'expense', 'line-item');
-  new CategoryObject ('Food', 'expense', 'line-item');
-  new CategoryObject ('Utilities', 'expense', 'line-item');
-  new CategoryObject ('Loans', 'expense', 'line-item');
-  new CategoryObject ('Miscellaneous', 'expense', 'line-item');
+  new CategoryObject ('Housing', 1500);
+  new CategoryObject ('Food', 1500);
+  new CategoryObject ('Utilities', 300);
+  new CategoryObject ('Loans', 300);
+  new CategoryObject ('Miscellaneous', 6000);
 
   return categoryObjectArray;
 }
 
 defaultCategoryCreator();
 
+/* console.log(incomeObjectArray);
+console.log(expenseObjectArray);
+console.log(categoryObjectArray); */
+
 // /////////////////////////////
 // End of dummy data samples, can be deleted after LS functionality completed
 // /////////////////////////////
-
-console.log(incomeObjectArray);
-console.log(expenseObjectArray);
-console.log(categoryObjectArray);
-
-
-
 
 
 
@@ -90,7 +97,6 @@ function ArrayTotaler(array) {
 var chartCategoryLabels = [];
 var chartCategorySpentData =[];
 var chartCategoryTotalData = [];
-
 
 // array of income entries
 var chartIncomeItemsArray = [];
@@ -121,11 +127,20 @@ function chartCategorySpentCreator() {
 
 // generates category total data array
 function chartCategoryDataTotaler() {
-  for (var i = 0; i < expenseObjectArray.length; i++) {
-    chartCategoryTotalData.push(expenseObjectArray[i].eoBudget);
+  for (var i = 0; i < categoryObjectArray.length; i++) {
+    chartCategoryTotalData.push(categoryObjectArray[i].categoryBudget);
   }
 }
 
+function budgetOverIncomeAlert() {
+  if (chartIncomeTotalData < chartCategoryTotalData) {
+  alert('Warning! Your total budget is higher than the income entered. Please consider returning to the form page to make adjustments.');
+  } else {
+  return;
+}
+}
+
+budgetOverIncomeAlert()
 incomeArrayCreator();
 chartLabelsCreator();
 chartCategorySpentCreator();
@@ -137,8 +152,8 @@ console.log(chartCategorySpentData);
 console.log(chartCategoryTotalData);
 
 var chartIncomeTotalData = ArrayTotaler(chartIncomeItemsArray);
-var chartSpentTotalData = ArrayTotaler(chartCategoryTotalData);
-var categoryTotalofTotals = ArrayTotaler(chartCategorySpentData);
+var chartSpentTotalData = ArrayTotaler(chartCategorySpentData);
+var categoryTotalofTotals = ArrayTotaler(chartCategoryTotalData);
 
 console.log(chartIncomeTotalData);
 console.log(chartSpentTotalData);
@@ -149,9 +164,6 @@ chartCategorySpentData.push(chartSpentTotalData);
 chartCategoryTotalData.push(categoryTotalofTotals);
 
 
-
-
-
 function drawBarGraph(){
     var canvasParent = document.getElementById('budget-chart');
     new Chart(canvasParent, {
@@ -160,13 +172,13 @@ function drawBarGraph(){
         labels: chartCategoryLabels,
         datasets: [
           {
-            label: 'Amount Spent',
+            label: 'Spent so far',
             barPercentage: 0.5,
             backgroundColor: 'Green',
             data: chartCategorySpentData
           },
           {
-            label: 'Amount Budgeted',
+            label: 'Total Budgeted for the Month',
             barPercentage: 0.5,
             backgroundColor: 'Black',
             data: chartCategoryTotalData
@@ -176,20 +188,20 @@ function drawBarGraph(){
       options: {
         title: {
           display: true,
-          text: 'text',
+          text: 'Budget Progress So Far This Month',
           fontSize: 20
         },
         scales: {
           xAxes: [{
-            stacked: true,
+            stacked: false,
             ticks: {
               autoSkip: false,
-              maxRotation: 75,
-              minRotation: 75
+              maxRotation: 0,
+              minRotation: 0,
             }
           }],
           yAxes: [{
-            stacked: true
+            stacked: false,
           }]
         }
       },
