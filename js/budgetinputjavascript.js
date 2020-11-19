@@ -1,8 +1,8 @@
 'use strict';
 
 var bijCategoryObjectArray = [];
-var incomeInputObject = [];
 var expenseInputObject = [];
+var incomeInputObject;
 var userFieldsetElement = document.getElementById('user-form');
 var categoryFieldsetElement = document.getElementById('category-form');
 
@@ -30,11 +30,40 @@ function userFormSubmitHandler(ufsEvent) {
   ufsEvent.preventDefault();
   var ufsUserNameInput = ufsEvent.target.userNameInput.value
   var ufsUserIncomeInput = ufsEvent.target.userIncomeInput.value;
+  var ufsHousingBudgetInput = ufsEvent.target.userHousingBudgetInput.value;
+  var ufsFoodBudgetInput = ufsEvent.target.userFoodBudgetInput.value;
+  var ufsUtilitiesBudgetInput = ufsEvent.target.userUtilitiesBudgetInput.value;
+  var ufsLoansBudgetInput = ufsEvent.target.userLoansBudgetInput.value;
+  var ufsMiscBudgetInput = ufsEvent.target.userMiscBudgetInput.value;
+  var ufsIndex = 0;
 
-  incomeInputObject.push(new IncomeObject('Income', ufsUserIncomeInput));
+  incomeInputObject = new IncomeObject('Income', ufsUserIncomeInput);
+
+  for(ufsIndex = 0; ufsIndex < bijCategoryObjectArray.length; ufsIndex++){
+    switch(String(bijCategoryObjectArray[ufsIndex].categoryName)){
+      case 'Housing':
+        bijCategoryObjectArray[ufsIndex].categoryBudget = ufsHousingBudgetInput;
+        break;
+      case 'Food':
+        bijCategoryObjectArray[ufsIndex].categoryBudget = ufsFoodBudgetInput;
+        break;
+      case 'Utilities':
+        bijCategoryObjectArray[ufsIndex].categoryBudget = ufsUtilitiesBudgetInput;
+        break;
+      case 'Loans':
+        bijCategoryObjectArray[ufsIndex].categoryBudget = ufsLoansBudgetInput;
+        break;
+      case 'Miscellaneous':
+        bijCategoryObjectArray[ufsIndex].categoryBudget = ufsMiscBudgetInput;
+        break;
+      default:
+        //Do Nothing
+    }
+  }
+
   userFieldsetElement.reset();
-  storeObjectsIntoLS(false, ufsUserNameInput, incomeInputObject);
-  document.getElementById('user-name-input-id').value = ufsUserNameInput;
+  storeObjectsIntoLS(false, ufsUserNameInput, incomeInputObject, bijCategoryObjectArray);
+  retrieveUserFormDefault();
   summaryPageLink();
 }
 
@@ -64,6 +93,7 @@ function categoryFormSubmitHandler(cfsEvent) {
   }else{
     expenseInputObject.push(new ExpenseObject(cfsSelectedCategory,cfsSelectedAmount,cfsRecurringFlag,cfsTransactionDate,cfsTransactionDescription))
   }
+  storeObjectsIntoLS(expenseInputObject);
   categoryFieldsetElement.reset();
   summaryPageLink();
 }
@@ -77,9 +107,35 @@ function retrieveUserFormDefault(){
   var runUtilityBudgetElement = document.getElementById('user-utilities-budget-input-id');
   var runLoanBudgetElement = document.getElementById('user-loans-budget-input-id');
   var runMiscBudgetElement = document.getElementById('user-misc-budget-input-id');
+  var runBudgetObjectArray = [];
+  var runIndex = 0;
 
   if(localStorage.length){
     runUserNameElement.value = retrieveUserNameFromLS();
+    runUserIncomeAmount.value = retrieveIncomeAmountFromLS();
+    runBudgetObjectArray = retrieveBudgetArrayFromLS();
+
+    for(runIndex = 0; runIndex < runBudgetObjectArray.length; runIndex++){
+      switch(String(runBudgetObjectArray[runIndex].categoryName)){
+        case 'Housing':
+          runHousingBudgetElement.value = runBudgetObjectArray[runIndex].categoryBudget;
+          break;
+        case 'Food':
+          runFoodBudgetElement.value = runBudgetObjectArray[runIndex].categoryBudget;
+          break;
+        case 'Utilities':
+          runUtilityBudgetElement.value = runBudgetObjectArray[runIndex].categoryBudget;
+          break;
+        case 'Loans':
+          runLoanBudgetElement.value = runBudgetObjectArray[runIndex].categoryBudget;
+          break;
+        case 'Miscellaneous':
+          runMiscBudgetElement.value = runBudgetObjectArray[runIndex].categoryBudget;
+          break;
+        default:
+          //Do Nothing
+      }
+    }
   }else{
     runUserNameElement.value = '<Please Enter Name>';
     runUserIncomeAmount.value = '0';
