@@ -141,3 +141,10 @@ function retrieveBudgetArrayFromLS(){
 
   return parsedBudgetArrayFromLS;
 }
+
+function retrieveExpenseArrayFromLS(){
+  var expenseArrayFromLS = localStorage.getItem('lsExpenseObject');
+  var parsedExpenseArrayFromLS = JSON.parse(expenseArrayFromLS);
+
+  return parsedExpenseArrayFromLS;
+}
