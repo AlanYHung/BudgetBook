@@ -40,47 +40,48 @@ function IncomeObject (ffiCategory, ffiAmount) {
 // eo = expenseObject
 // ffe = expense form field input
 
-function ExpenseObject (ffeCategory, ffeAmount, ffeRecurring, ffeTransactionDate, ffeBudget, ffeDescription = '') {
+function ExpenseObject (ffeCategory, ffeAmount, ffeRecurring, ffeTransactionDate, ffeDescription = '') {
     this.eoCategory = ffeCategory;
     this.eoAmount = ffeAmount;
     this.eoRecurring = ffeRecurring; // boolean 
     this.eoTransactionDate = ffeTransactionDate;
     this.eoDescription = ffeDescription;
-    this.eoBudget = ffeBudget;
 
     expenseObjectArray.push(this);
 }
 
 // ffc = form field category
-function CategoryObject (ffcName, ffcType, ffcTrackingStyle) {
+function CategoryObject (ffcName) {
     this.categoryName = ffcName;
-    this.categoryType = ffcType; //income vs expense
-    this.categoryPaymentTrackingStyle = ffcTrackingStyle; //cumulative or line-item category
+    this.categoryBudget = 0;
 
     categoryObjectArray.push(this);
 }
 
 function defaultCategoryCreator() {
-    new CategoryObject ('Housing', 'expense', 'line-item');
-    new CategoryObject ('Food', 'expense', 'line-item');
-    new CategoryObject ('Utilities', 'expense', 'line-item');
-    new CategoryObject ('Loans', 'expense', 'line-item');
-    new CategoryObject ('Miscellaneous', 'expense', 'line-item');
+    new CategoryObject ('Housing');
+    new CategoryObject ('Food');
+    new CategoryObject ('Utilities');
+    new CategoryObject ('Loans');
+    new CategoryObject ('Miscellaneous');
 
     return categoryObjectArray;
 }
 
 
 // These local storage functions created by Sang
-function storeObjectsIntoLS(formExpenseObjectArray = '', formUserName = '', formIncomeObjectArray = ''){
+function storeObjectsIntoLS(formExpenseObjectArray = '', formUserName = '', formIncomeObjectArray = '', formCategoryObjectArray = ''){
   //ls = Local Storage
-
+  //modified by AYH to fit needs of Form Page
+  //added optional parameters and split the income and expense form inputs
   if(formUserName){
     var stringifiedUserName = JSON.stringify(formUserName);
     var stringifiedIncomeObjects = JSON.stringify(formIncomeObjectArray);
+    var stringifiedCategoryObjects = JSON.stringify(formCategoryObjectArray);
 
     localStorage.setItem('lsUserName', stringifiedUserName);
     localStorage.setItem('lsIncomeObject', stringifiedIncomeObjects);
+    localStorage.setItem('lsCategoryObject', stringifiedCategoryObjects);
   }
 
   if(formExpenseObjectArray){
