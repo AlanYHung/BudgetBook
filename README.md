@@ -8,7 +8,7 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.9.5
+v. 0.10.5
 
 ### Links and Resources
 
@@ -60,3 +60,5 @@ v. 0.9.5
 - 11/18/2020 (Updated Local Storage functions to fit the need of Form Page -AYH)
 - 11/18/2020 (Updated Default Value Function to include more fields -AYH)
 - 11/18/2020 (Conformed Summary JS to work with changed category total from Form page, added "budget exceeds income" alert -NM)
+- 11/18/2020 (Form Page Full Functionality Completed including putting Data into Local Storage -AYH)
+- 11/18/2020 (Added a couple more local storage functions needed by Form Page -AYH)

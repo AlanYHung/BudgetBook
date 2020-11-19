@@ -127,3 +127,17 @@ function retrieveUserNameFromLS(){
 
   return JSON.parse(userNameFromLS);
 }
+
+function retrieveIncomeAmountFromLS(){
+  var incomeAmountFromLS = localStorage.getItem('lsIncomeObject');
+  var parsedIncomeAmountFromLS = JSON.parse(incomeAmountFromLS);
+
+  return parsedIncomeAmountFromLS.ioAmount;
+}
+
+function retrieveBudgetArrayFromLS(){
+  var budgetArrayFromLS = localStorage.getItem('lsCategoryObject');
+  var parsedBudgetArrayFromLS = JSON.parse(budgetArrayFromLS);
+
+  return parsedBudgetArrayFromLS;
+}
