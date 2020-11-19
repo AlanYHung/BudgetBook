@@ -25,15 +25,27 @@ header{
   display: flex;
   justify-content: center;
   border: 10px solid gray;
-  margin: 50px 0;
+  margin: 100px 0;
   width: 970px;
-  height: 800px;
+  height: 850px;
+  background-color: maroon;
+}
+
+h2#team-box-title{
+  height: 50px;
+  width: 150px;
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+  margin: 0px auto -120px auto;
+  text-align: center;
+
 }
 
 .bio-box{
   width: 260px;
   height: 700px;
-  margin: 40px 10px;
+  margin: 70px 10px;
   border: 10px solid gray;
 }
 
@@ -48,16 +60,14 @@ header{
   margin: 0px 20px;
   font-size: large;
   font-weight: bold;
-  color: blue;  
+  color: skyblue;
 }
 
 .bio-text{
-  /* border: 1px solid gray; */
   width: 220px;
   height: 280px;
   margin: 0px 20px;
-  color: purple;
-  text-shadow: rgb(235, 231, 216) 1px 0 10px;
+  color: white;
   text-justify: center;    
 }
 
@@ -83,22 +93,29 @@ h2#how-to-guide-title{
   text-align: center;
   font-size: x-large;
   font-weight: bolder;
-  margin: 0px auto;
+  margin: 5px auto;
+  color: yellow
 }
 
 #how-to-guide{
   display: flex;
   flex-direction: column;
   width: 970px;
-  height: 800px;
-  border: 10px solid white;
+  height: 1000px;
+  border: 10px solid gray;
 }
 
 h5{
   width: 800px;
   height: 120px;
-  border: 1px solid yellow;
+  color: darkslategray;
+  border: 5px solid yellow;
+  background-color: yellow;
   margin: 20px auto;
+  border-radius: 30px;
+  -moz-box-shadow: 5px 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px 5px #777777;
+  box-shadow: 5px 5px 5px 5px; 
 }
 
 #contact-us{
