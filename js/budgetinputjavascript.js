@@ -2,6 +2,7 @@
 
 var bijCategoryObjectArray = [];
 var expenseInputObject = [];
+var initialExpenseInputObject = retrieveExpenseArrayFromLS();
 var incomeInputObject;
 var userFieldsetElement = document.getElementById('user-form');
 var categoryFieldsetElement = document.getElementById('category-form');
@@ -17,11 +18,11 @@ function summaryPageLink(){
   //spl = summaryPageLink
   var splLinkElement = document.getElementById('budgetinput-summary-link').textContent;
 
-  if(incomeInputObject.length > 0 && expenseInputObject.length > 0){
-    if(splLinkElement === 'Summary Page'){
-      // do nothing
-    }else{
+  if(retrieveIncomeAmountFromLS() > 0 && initialExpenseInputObject.length > 0){
+    if(!splLinkElement){
       elementCreator('budgetinput-summary-link', 'a', 'Summary Page', 'href', './budgetoutput.html');
+    }else{
+      // do nothing
     }
   }
 }
@@ -94,6 +95,7 @@ function categoryFormSubmitHandler(cfsEvent) {
     expenseInputObject.push(new ExpenseObject(cfsSelectedCategory,cfsSelectedAmount,cfsRecurringFlag,cfsTransactionDate,cfsTransactionDescription))
   }
   storeObjectsIntoLS(expenseInputObject);
+  initialExpenseInputObject = expenseInputObject;
   categoryFieldsetElement.reset();
   summaryPageLink();
 }
@@ -152,3 +154,4 @@ categoryRender();
 userFieldsetElement.addEventListener('submit', userFormSubmitHandler);
 categoryFieldsetElement.addEventListener('submit', categoryFormSubmitHandler);
 retrieveUserFormDefault();
+summaryPageLink();
