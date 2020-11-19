@@ -8,7 +8,7 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.9.2
+v. 0.9.4
 
 ### Links and Resources
 
@@ -51,4 +51,8 @@ v. 0.9.2
 - 11/18/2020 (Skeleton code for Summary Page html setup -NM)
 - 11/18/2020 (Global variables created in JavaScript -NM)
 - 11/18/2020 (Form Page for HTML, CSS Adjusted for MVP, Navigation completed -AYH)
-- 11/18/2020 (app.js updated with local storage functionalities - SL)
+- 11/18/2020 (app.js updated with local storage functionalities -SL)
+- 11/18/2020 (Fixed Navigation Bug on Form Page where too many links were being inserted -AYH)
+- 11/18/2020 (Added Local Storage Data store for Income Form & Retrieves user name on page load)
+- 11/18/2020 (Changed Expense Object Array to only store unique Categories -AYH)
+- 11/18/2020 (Completed basic stacked chart functionality on Summary page -NM)
