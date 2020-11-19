@@ -9,15 +9,25 @@ body{
   padding-left: 10px;
   padding-right: 10px;
   margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
 header{
   margin: 50px auto;
-  font-size: x-large;
+  font-size: 80px;
   font-weight: bolder;
   text-align: center;
+  font-family: 'Rouge Script', cursive;
 }
 
+#copyright{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
 /* ========================================== */ 
 /* ======= This styles the Team Bio ======= */
 /* ========================================== */
@@ -101,16 +111,17 @@ h2#how-to-guide-title{
   display: flex;
   flex-direction: column;
   width: 970px;
-  height: 1000px;
+  height: 800px;
   border: 10px solid gray;
+  border-radius: 30px;
 }
 
-h5{
+#homepage-how-to-step{
   width: 800px;
-  height: 120px;
+  height: 200px;
   color: darkslategray;
-  border: 5px solid yellow;
-  background-color: yellow;
+  border: 5px solid brown;
+  background-color: rgb(241, 241, 126);
   margin: 20px auto;
   border-radius: 30px;
   -moz-box-shadow: 5px 5px 5px 5px #777777;
@@ -118,10 +129,60 @@ h5{
   box-shadow: 5px 5px 5px 5px; 
 }
 
-#contact-us{
-  margin: 100px;
-  text-align: center;
+#formpage-how-to-step{
+  width: 800px;
+  height: 400px;
+  color: darkslategray;
+  border: 5px solid brown;
+  background-color:  rgb(241, 241, 126);
+  margin: 20px auto;
+  border-radius: 30px;
+  -moz-box-shadow: 5px 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px 5px #777777;
+  box-shadow: 5px 5px 5px 5px;   
+}
+
+.how-to-step{
+  width: 600px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: auto;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+h5{
   font-size: x-large;
   font-weight: bolder;
-  color: blue
+  margin-left: 100px;
+  margin-top: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: darkslategray;
 }
+
+
+
+/* ========================================== */ 
+/* ======= This styles the navigation ======= */
+/* ========================================== */ 
+
+#aboutus-nav{ 
+  height: 30px;
+  background-color: aliceblue;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 30px;
+} 
+
+#aboutus-nav-options{
+  display: flex;
+}
+
+.aboutus-nav-links{
+  padding: 0px 10px;
+  font-size: x-large;
+  font-weight: bolder;  
+}  
+
