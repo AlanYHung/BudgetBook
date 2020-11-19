@@ -34,3 +34,25 @@ max-width: 90%;
 margin: auto;
 background-color: antiquewhite;
 }
+
+#budgetinput-nav{
+  height: 30px;
+  background-color: aliceblue;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: -0px auto 10px auto;
+  width: 1200px;
+  border-radius: 30px;
+}
+
+#budgetinput-nav-options{
+  display: flex;
+}
+
+.budgetinput-nav-links{
+  padding: 0px 10px;
+  font-size: x-large;
+  font-weight: bolder;
+}
