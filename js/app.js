@@ -71,17 +71,23 @@ function defaultCategoryCreator() {
 }
 
 
-// This is the local storage functions created by Sang
-function storeObjectsIntoLS(){
-  var stringifiedIncomeObjects = JSON.stringigy(incomeObjectArray);
-  var stringifiedExpenseObjects = JSON.stringify(expenseObjectArray);
-  var stringifiedCategoryObjects = JSON.stringify(categoryObjectArray);
+// These local storage functions created by Sang
+function storeObjectsIntoLS(formExpenseObjectArray = '', formUserName = '', formIncomeObjectArray = ''){
+  //ls = Local Storage
 
-  localStorage.setItem('income', stringifiedIncomeObjects);
-  localStorage.setItem('expense', stringifiedExpenseObjects);
-  localStorage.setItem('category', stringifiedCategoryObjects);
+  if(formUserName){
+    var stringifiedUserName = JSON.stringify(formUserName);
+    var stringifiedIncomeObjects = JSON.stringify(formIncomeObjectArray);
+
+    localStorage.setItem('lsUserName', stringifiedUserName);
+    localStorage.setItem('lsIncomeObject', stringifiedIncomeObjects);
+  }
+
+  if(formExpenseObjectArray){
+    var stringifiedExpenseObjects = JSON.stringify(formExpenseObjectArray);
+    localStorage.setItem('lsExpenseObject', stringifiedExpenseObjects);
+  }
 }
-
 
 function retrieveObjectsFromLS(){
   var incomeObjectsFromLS = localStorage.getItem('income');
@@ -105,7 +111,7 @@ function generateNewObjectArrays(income, expense, category){
   }
 
   for (var expenseCounter=0; expenseCounter < expense.length; expenseCounter++){
-    new ExpenseObject(expense[expenseCounter].eoAmount, expense[expenseCounter].eoRecurring, expense[expenseCounter].eoTransactionDate, expense[expenseCounter].eoDescription), expense[expenseCounter].eoBudget);
+    new ExpenseObject(expense[expenseCounter].eoAmount, expense[expenseCounter].eoRecurring, expense[expenseCounter].eoTransactionDate, expense[expenseCounter].eoDescription, expense[expenseCounter].eoBudget);
   }
 
   for (var categoryCounter=0; categoryCounter < category.length; categoryCounter++) {
@@ -114,3 +120,9 @@ function generateNewObjectArrays(income, expense, category){
 
 }
 
+//Additional LS Functions AYH
+function retrieveUserNameFromLS(){
+  var userNameFromLS = localStorage.getItem('lsUserName');
+
+  return JSON.parse(userNameFromLS);
+}
