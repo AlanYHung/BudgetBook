@@ -8,7 +8,7 @@ Budget Book
 ### Authors: Alan Hung, Nick Magruder, Sang Lee
 
 ### Version
-v. 0.9.1
+v. 0.9.2
 
 ### Links and Resources
 
@@ -51,3 +51,4 @@ v. 0.9.1
 - 11/18/2020 (Skeleton code for Summary Page html setup -NM)
 - 11/18/2020 (Global variables created in JavaScript -NM)
 - 11/18/2020 (Form Page for HTML, CSS Adjusted for MVP, Navigation completed -AYH)
+- 11/18/2020 (app.js updated with local storage functionalities - SL)
