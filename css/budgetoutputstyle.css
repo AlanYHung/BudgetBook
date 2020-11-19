@@ -28,3 +28,9 @@ body{
     background-color: rgb(63, 41, 13);;
     color: rgb(247, 236, 220);
 }
+
+#budget-chart {
+max-width: 90%;
+margin: auto;
+background-color: antiquewhite;
+}
