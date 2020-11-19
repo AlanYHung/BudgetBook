@@ -71,7 +71,7 @@ body{
   /* width and height at 100% fills up the entire section box */
   width: 100%;      
   height: 100%;
-  background-image: url("https://via.placeholder.com/375x500");
+  background-image: url("../images/indeximages/formscreenshot.jpg");
   background-repeat: no-repeat;
   /* This resizes the background IMAGE to fill the whole box */
   background-size: cover;
