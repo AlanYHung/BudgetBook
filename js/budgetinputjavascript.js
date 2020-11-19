@@ -46,7 +46,6 @@ function categoryFormSubmitHandler(cfsEvent) {
   var cfsSelectedAmount = cfsEvent.target.categoryAmountInput.value;;
   var cfsRecurringFlag = document.getElementById('category-recurring-expense-input-id').checked;
   var cfsTransactionDate = cfsEvent.target.categoryDateSelection.value;
-  var cfsBudgetAmount = cfsEvent.target.categoryExpenseBudgetInput.value;
   var cfsTransactionDescription = cfsEvent.target.categoryTransactionDescriptionInput.value;
 
   for(var cfsIndex = 0; cfsIndex < expenseInputObject.length; cfsIndex++){
@@ -61,23 +60,34 @@ function categoryFormSubmitHandler(cfsEvent) {
     expenseInputObject[cfsCategoryLocation].eoAmount = cfsSelectedAmount;
     expenseInputObject[cfsCategoryLocation].eoRecurring = cfsRecurringFlag;
     expenseInputObject[cfsCategoryLocation].eoTransactionDate = cfsTransactionDate;
-    expenseInputObject[cfsCategoryLocation].eoBudget = cfsBudgetAmount;
     expenseInputObject[cfsCategoryLocation].eoDescription = cfsTransactionDescription;
   }else{
-    expenseInputObject.push(new ExpenseObject(cfsSelectedCategory,cfsSelectedAmount,cfsRecurringFlag,cfsTransactionDate,cfsBudgetAmount,cfsTransactionDescription))
+    expenseInputObject.push(new ExpenseObject(cfsSelectedCategory,cfsSelectedAmount,cfsRecurringFlag,cfsTransactionDate,cfsTransactionDescription))
   }
   categoryFieldsetElement.reset();
   summaryPageLink();
 }
 
-function retrieveUserName(){
+function retrieveUserFormDefault(){
   //run = retrieveUserName
   var runUserNameElement = document.getElementById('user-name-input-id');
+  var runUserIncomeAmount = document.getElementById('user-income-input-id')
+  var runHousingBudgetElement = document.getElementById('user-housing-budget-input-id');
+  var runFoodBudgetElement = document.getElementById('user-food-budget-input-id');
+  var runUtilityBudgetElement = document.getElementById('user-utilities-budget-input-id');
+  var runLoanBudgetElement = document.getElementById('user-loans-budget-input-id');
+  var runMiscBudgetElement = document.getElementById('user-misc-budget-input-id');
 
   if(localStorage.length){
     runUserNameElement.value = retrieveUserNameFromLS();
   }else{
     runUserNameElement.value = '<Please Enter Name>';
+    runUserIncomeAmount.value = '0';
+    runHousingBudgetElement.value = '0';
+    runFoodBudgetElement.value = '0';
+    runUtilityBudgetElement.value = '0';
+    runLoanBudgetElement.value = '0';
+    runMiscBudgetElement.value = '0';
   }
 }
 
@@ -85,4 +95,4 @@ bijCategoryObjectArray = defaultCategoryCreator();
 categoryRender();
 userFieldsetElement.addEventListener('submit', userFormSubmitHandler);
 categoryFieldsetElement.addEventListener('submit', categoryFormSubmitHandler);
-retrieveUserName();
+retrieveUserFormDefault();
