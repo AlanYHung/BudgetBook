@@ -57,7 +57,6 @@ function userFormSubmitHandler(ufsEvent) {
     retrieveUserFormDefault();
     summaryPageLink("budgetinput-summary-link");
   }
-
 }
 
 function categoryFormSubmitHandler(cfsEvent) {
@@ -69,6 +68,10 @@ function categoryFormSubmitHandler(cfsEvent) {
   var cfsRecurringFlag = document.getElementById('category-recurring-expense-input-id').checked;
   var cfsTransactionDate = cfsEvent.target.categoryDateSelection.value;
   var cfsTransactionDescription = cfsEvent.target.categoryTransactionDescriptionInput.value;
+  
+  if(localStorage.length){
+    expenseInputObject = retrieveExpenseArrayFromLS();
+  }
 
   for (var cfsIndex = 0; cfsIndex < expenseInputObject.length; cfsIndex++) {
     if (expenseInputObject[cfsIndex].eoCategory === cfsSelectedCategory) {
