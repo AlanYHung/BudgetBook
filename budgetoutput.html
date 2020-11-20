@@ -6,11 +6,60 @@
     <link rel="stylesheet" href="./css/budgetoutputstyle.css" type="text/css">
   </head>
   <body>
-    <header></header>
-    <main></main>
+    <header>
+      <h1>Budget Summary</h1>
+    </header>
+    <main>
+      <!-- stretch goal: budget table -->
+<!--       <div id="category-table-div">
+        <h2>Budget Breakdown</h2>
+        <table id="category-table">
+                <tbody id="category-data"></tbody>
+                <tr>
+                  <th>Category</th>
+                  <th>Spent So-Far</th>
+                  <th>On-Track Target</th>
+                  <th>Variance</th>
+                  <th>Monthly Target</th>
+                  <th>On-Track?</th>
+                </tr>
+            </table>
+      </div> -->
+ <!--      <div id="summary-table-div">
+        <h2>Summary</h2>
+        <table id="summary-table">
+                <tbody id="summary-data"></tbody>
+                <tr>
+                  <th>Total Spent as-of Today:</th>
+                  <th>On-Track Target</th>
+                  <th>Variance</th>
+                  <th>Monthly Budget</th>
+                  <th>On-Track?</th>
+                </tr>
+            </table>
+      </div> -->
+      <div id="budget-chart-div">
+        <canvas id="budget-chart" width="1464" height="450"></canvas>
+      </div>
+    </main>
     <footer>
-      <div>Authored &copy; 2020 by Team Thin Mints</div>
-    </footer>
+    <nav id="budgetinput-nav"> 
+      <ul id="budgetinput-nav-options">
+        <li class="budgetinput-nav-links"> 
+          <a href="./index.html">  Home Page </a>
+        </li>
+        <li class="budgetinput-nav-links"> 
+          <a href="./budgetinput.html">  Input Form </a>
+        <li class="budgetinput-nav-links"> 
+          <a href="./budgetoutput.html">  Summary </a>
+        <li class="budgetinput-nav-links"> 
+          <a href="./aboutus.html">  About Us </a>
+        </li>
+      </ul>
+    </nav>
+    <div>Authored &copy; 2020 by Team Thin Mints</div>
+  </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@2.9.4/dist/Chart.min.js"></script>
     <script src="./js/app.js" type="text/javascript"></script>
     <script src="./js/budgetoutputjavascript.js" type="text/javascript"></script>
   </body>

@@ -4,19 +4,66 @@
     <title>Budget Form</title>
     <link rel="stylesheet" href="./css/reset.css" type="text/css">
     <link rel="stylesheet" href="./css/budgetinputstyle.css" type="text/css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500&display=swap" rel="stylesheet">
   </head>
+
   <body>
-    <header></header>
+    <header>Form Page</header>
     <main>
-      <section>
-        <form action=""></form>
-      </section>
-      <section>
-        <form action=""></form>
-      </section>
+      <!-- User Profile:  Include User Name, Income (time of deposits), Category Mgmt -->
+      <div id="both-forms">
+        <form id="user-form">
+          <fieldset class="form-fieldset">
+            <label class="form-title" for="user-form-title">User Form</label>
+            <label for="user-name">Name:</label>
+            <input id="user-name-input-id" type="text" name="userNameInput" required="required">
+            <label for="user-income">Income Amount:</label>
+            <input id="user-income-input-id" type="text" name="userIncomeInput" required="required">
+            <label for="user-housing-budget">Housing Budget:</label>
+            <input id="user-housing-budget-input-id" type="text" name="userHousingBudgetInput" required="required">
+            <label for="user-food-budget">Food Budget:</label>
+            <input id="user-food-budget-input-id" type="text" name="userFoodBudgetInput" required="required">
+            <label for="user-utilities-budget">Utility Budget:</label>
+            <input id="user-utilities-budget-input-id" type="text" name="userUtilitiesBudgetInput" required="required">
+            <label for="user-loans-budget">Loan Budget:</label>
+            <input id="user-loans-budget-input-id" type="text" name="userLoansBudgetInput" required="required">
+            <label for="user-misc-budget">Miscellaneous Budget:</label>
+            <input id="user-misc-budget-input-id" type="text" name="userMiscBudgetInput" required="required">
+            <input id="user-form-submit-id" type="submit" name="userFormSubmit">
+          </fieldset>
+        </form>
+        <form id="category-form">
+          <fieldset class='form-fieldset'>
+            <label class="form-title" for="Category-form-title">Expense Form</label>
+            <label for="category-selection">Category:</label>
+            <select id="category-selection-options-id" name="categorySelectionOptions"></select>
+            <label for="category-amount">Transaction Amount:</label>
+            <input id="category-amount-input-id" type="text" name="categoryAmountInput" required="required">
+            <label for="category-amount-date">Date of Transaction:</label>
+            <input id="category-date-selection-id" type="date" name="categoryDateSelection" required="required">
+            <label for="category-recurring-expense">Recurring Expense</label>
+            <input id="category-recurring-expense-input-id" type="checkbox" name="categoryRecurringExpenseInput">
+            <label for="category-transaction-description">Transaction Description:</label>
+            <input id="category-transaction-description-input-id" type="text" name="categoryTransactionDescriptionInput">
+            <input id="category-form-submit-id" type="submit" name="categoryFormSubmit">
+          </fieldset>
+        </form>
+      </div>
     </main>
     <footer>
-      <div>Authored &copy; 2020 by Team Thin Mints</div>
+      <nav id="budgetinput-nav"> 
+        <ul id="budgetinput-nav-options">
+          <li class="budgetinput-nav-links"> 
+            <a href="./index.html">  Home Page </a>
+          </li>
+          <li id="budgetinput-summary-link" class="budgetinput-nav-links"></li>
+          <li class="budgetinput-nav-links"> 
+            <a href="./aboutus.html">  About Budget Book </a>
+          </li>
+        </ul>
+      </nav>
+      <div id="copyright">Authored &copy; 2020 by Team Thin Mints</div>
     </footer>
     <script src="./js/app.js" type="text/javascript"></script>
     <script src="./js/budgetinputjavascript.js" type="text/javascript"></script>

@@ -1,0 +1,187 @@
+
+/* ========================================== */ 
+/* ========== This styles the page ========== */
+/* ========================================== */ 
+
+body{
+  background-image: url("../images/indeximages/wood-background.jpg");
+  width: 960px;
+  padding-left: 10px;
+  padding-right: 10px;
+  margin: auto;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+header{
+  margin: 50px auto;
+  font-size: 80px;
+  font-weight: bolder;
+  text-align: center;
+  font-family: 'Rouge Script', cursive;
+}
+
+#copyright{
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+}
+/* ========================================== */ 
+/* ======= This styles the Team Bio ======= */
+/* ========================================== */
+#team-bio{
+  display: flex;
+  justify-content: center;
+  border: 10px solid gray;
+  margin: 100px 0;
+  width: 970px;
+  height: 850px;
+  background-color: maroon;
+}
+
+h2#team-box-title{
+  height: 50px;
+  width: 150px;
+  color: white;
+  font-weight: bolder;
+  font-size: x-large;
+  margin: 0px auto -120px auto;
+  text-align: center;
+
+}
+
+.bio-box{
+  width: 260px;
+  height: 700px;
+  margin: 70px 10px;
+  border: 10px solid gray;
+}
+
+.bio-pic{
+  width: 220px;
+  height: 260px;
+  border: 1px solid gray;
+  margin: 10px 20px;
+}
+
+.name-heading{
+  margin: 0px 20px;
+  font-size: large;
+  font-weight: bold;
+  color: skyblue;
+}
+
+.bio-text{
+  width: 220px;
+  height: 280px;
+  margin: 0px 20px;
+  color: white;
+  text-justify: center;    
+}
+
+.linkedin-logo{
+  width: 100px;
+  height: 100px;
+  margin: 0px 20px;
+}
+
+.github-logo{
+  width: 50px;
+  height: 50px;
+  margin: 0px 20px;
+  margin-bottom: 22px;
+}
+
+/* ========================================== */ 
+/* ======= This styles the How-To Guide ======= */
+/* ========================================== */ 
+
+h2#how-to-guide-title{
+  width: 500px;
+  text-align: center;
+  font-size: x-large;
+  font-weight: bolder;
+  margin: 5px auto;
+  color: yellow
+}
+
+#how-to-guide{
+  display: flex;
+  flex-direction: column;
+  width: 970px;
+  height: 800px;
+  border: 10px solid gray;
+  border-radius: 30px;
+}
+
+#homepage-how-to-step{
+  width: 800px;
+  height: 200px;
+  color: darkslategray;
+  border: 5px solid brown;
+  background-color: rgb(241, 241, 126);
+  margin: 20px auto;
+  border-radius: 30px;
+  -moz-box-shadow: 5px 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px 5px #777777;
+  box-shadow: 5px 5px 5px 5px; 
+}
+
+#formpage-how-to-step{
+  width: 800px;
+  height: 400px;
+  color: darkslategray;
+  border: 5px solid brown;
+  background-color:  rgb(241, 241, 126);
+  margin: 20px auto;
+  border-radius: 30px;
+  -moz-box-shadow: 5px 5px 5px 5px #777777;
+  -webkit-box-shadow: 5px 5px 5px 5px #777777;
+  box-shadow: 5px 5px 5px 5px;   
+}
+
+.how-to-step{
+  width: 600px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  margin: auto;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+h5{
+  font-size: x-large;
+  font-weight: bolder;
+  margin-left: 100px;
+  margin-top: 20px;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: darkslategray;
+}
+
+
+
+/* ========================================== */ 
+/* ======= This styles the navigation ======= */
+/* ========================================== */ 
+
+#aboutus-nav{ 
+  height: 30px;
+  background-color: aliceblue;
+  opacity: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  border-radius: 30px;
+} 
+
+#aboutus-nav-options{
+  display: flex;
+}
+
+.aboutus-nav-links{
+  padding: 0px 10px;
+  font-size: x-large;
+  font-weight: bolder;  
+}  
