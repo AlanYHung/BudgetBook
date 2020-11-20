@@ -110,27 +110,33 @@ function chartCategoryDataTotaler() {
 }
 
 // alert if budget entered is larger than total income
-function budgetOverIncomeAlert() {
-  if (chartIncomeTotalData < chartCategoryTotalData) {
+ function budgetOverIncomeAlert() {
+  if (chartIncomeTotalData < categoryTotalofTotals) {
   alert('Warning! Your total budget is higher than the income entered. Please consider returning to the form page to make adjustments.');
   } else {
   return;
 }
-}
+} 
 
 // takes arrays and generates the total, plus totals of the totals
 function arraysTotaler(){
-  var chartIncomeTotalData = ArrayTotaler(chartIncomeItemsArray);
-  var chartSpentTotalData = ArrayTotaler(chartCategorySpentData);
-  var categoryTotalofTotals = ArrayTotaler(chartCategoryTotalData);
+chartIncomeTotalData = ArrayTotaler(chartIncomeItemsArray);
+chartSpentTotalData = ArrayTotaler(chartCategorySpentData);
+categoryTotalofTotals = ArrayTotaler(chartCategoryTotalData);
+/* 
 
   chartCategoryLabels.push('Total');
   chartCategorySpentData.push(chartSpentTotalData);
   chartCategoryTotalData.push(categoryTotalofTotals);
-  
+   */
   return (chartIncomeTotalData, chartSpentTotalData, categoryTotalofTotals);
   }
 
+  function chartFinalizer(){
+      chartCategoryLabels.push('Total');
+      chartCategorySpentData.push(chartSpentTotalData);
+      chartCategoryTotalData.push(categoryTotalofTotals);
+      }
 
 function drawBarGraph(){
     var canvasParent = document.getElementById('budget-chart');
@@ -143,13 +149,13 @@ function drawBarGraph(){
             label: 'Spent so far',
             barPercentage: 0.5,
             backgroundColor: 'Green',
-            data: chartCategorySpentData
+            data: chartCategorySpentData,
           },
           {
             label: 'Total Budgeted for the Month',
             barPercentage: 0.5,
             backgroundColor: 'Black',
-            data: chartCategoryTotalData
+            data: chartCategoryTotalData,
           }
         ]
       },
@@ -161,7 +167,7 @@ function drawBarGraph(){
         },
         scales: {
           xAxes: [{
-            stacked: false,
+            stacked: true,
             ticks: {
               autoSkip: false,
               maxRotation: 0,
@@ -169,7 +175,7 @@ function drawBarGraph(){
             }
           }],
           yAxes: [{
-            stacked: false,
+            stacked: true,
           }]
         }
       },
@@ -184,5 +190,6 @@ chartLabelsCreator();
 chartCategorySpentCreator();
 chartCategoryDataTotaler();
 arraysTotaler();
-budgetOverIncomeAlert();
+chartFinalizer();
+budgetOverIncomeAlert()
 drawBarGraph();
