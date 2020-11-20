@@ -6,10 +6,16 @@
 header{
   font-size: xxx-large;
   font-weight: bolder;
-  height: 100px; 
+  background-color: aliceblue;
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 800px;
+  height: 70px; 
+  border-radius: 90px;
+  margin: auto;
+  opacity: 50%;
+  margin-top: 20px;
 }
 
 body{
@@ -32,12 +38,14 @@ body{
 
 #homepage-nav{
   height: 30px;
-  /* TODO: make the navigation readable without standing out */
   background-color: aliceblue;
   opacity: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: auto;
+  width: 800px;
+  border-radius: 30px;
 }
 
 #homepage-nav-options{

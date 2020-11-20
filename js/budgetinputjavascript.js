@@ -2,7 +2,6 @@
 
 var bijCategoryObjectArray = [];
 var expenseInputObject = [];
-var initialExpenseInputObject = retrieveExpenseArrayFromLS();
 var incomeInputObject;
 var userFieldsetElement = document.getElementById('user-form');
 var categoryFieldsetElement = document.getElementById('category-form');
@@ -13,20 +12,7 @@ function categoryRender() {
     elementCreator('category-selection-options-id', 'option', bijCategoryObjectArray[i].categoryName, 'value', `${bijCategoryObjectArray[i].categoryName}`);
   }
 }
-// TODO: figure out a way to move this into app.js and then make it available for both index and budgetinput .js (post-MVP)
-function summaryPageLink() {
-  //spl = summaryPageLink
-  var splLinkElement = document.getElementById('budgetinput-summary-link').textContent;
 
-  //Reference to solve whether Array exists: https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist
-  if (retrieveIncomeAmountFromLS() > 0 && Array.isArray(initialExpenseInputObject) && initialExpenseInputObject.length > 0) {
-    if (!splLinkElement) {
-      elementCreator('budgetinput-summary-link', 'a', 'Summary Page', 'href', './budgetoutput.html');
-    } else {
-      // do nothing
-    }
-  }
-}
 
 function userFormSubmitHandler(ufsEvent) {
   ufsEvent.preventDefault();
@@ -69,7 +55,7 @@ function userFormSubmitHandler(ufsEvent) {
     userFieldsetElement.reset();
     storeObjectsIntoLS(false, ufsUserNameInput, incomeInputObject, bijCategoryObjectArray);
     retrieveUserFormDefault();
-    summaryPageLink();
+    summaryPageLink("budgetinput-summary-link");
   }
 
 }
@@ -103,7 +89,7 @@ function categoryFormSubmitHandler(cfsEvent) {
   storeObjectsIntoLS(expenseInputObject);
   initialExpenseInputObject = expenseInputObject;
   categoryFieldsetElement.reset();
-  summaryPageLink();
+  summaryPageLink("budgetinput-summary-link");
 }
 
 function retrieveUserFormDefault() {
@@ -160,4 +146,4 @@ categoryRender();
 userFieldsetElement.addEventListener('submit', userFormSubmitHandler);
 categoryFieldsetElement.addEventListener('submit', categoryFormSubmitHandler);
 retrieveUserFormDefault();
-summaryPageLink();
+summaryPageLink("budgetinput-summary-link");
