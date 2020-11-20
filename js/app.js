@@ -156,12 +156,14 @@ function summaryPageLink(splLinkElementId) {
   //spl = summaryPageLink
   var splLinkElement = document.getElementById(splLinkElementId).textContent;
 
-  //Reference to solve whether Array exists: https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist
-  if (retrieveIncomeAmountFromLS() > 0 && Array.isArray(initialExpenseInputObject) && initialExpenseInputObject.length > 0) {
-    if (!splLinkElement) {      
-      elementCreator(splLinkElementId, 'a', 'Summary Page', 'href', './budgetoutput.html');
-    } else {
-      // do nothing
+  if(localStorage.length){
+    //Reference to solve whether Array exists: https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist
+    if (retrieveIncomeAmountFromLS() > 0 && Array.isArray(initialExpenseInputObject) && initialExpenseInputObject.length > 0) {
+      if (!splLinkElement) {      
+        elementCreator(splLinkElementId, 'a', 'Summary Page', 'href', './budgetoutput.html');
+      } else {
+        // do nothing
+      }
     }
   }
 }
