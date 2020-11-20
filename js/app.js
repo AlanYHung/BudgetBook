@@ -3,6 +3,8 @@
 var incomeObjectArray = [];
 var expenseObjectArray = [];
 var categoryObjectArray = [];
+var initialExpenseInputObject = retrieveExpenseArrayFromLS();
+
 
 // This function is a generic function that allows creation of element anywhere in the web app; where the child content is optional
 function elementCreator(ecParentId,   ecChildElement, ecChildContent = '', ecAttributeType1 = '', ecAttributeContent1 = '', ecAttributeType2 = '', ecAttributeContent2 = ''){
@@ -147,4 +149,19 @@ function retrieveExpenseArrayFromLS(){
   var parsedExpenseArrayFromLS = JSON.parse(expenseArrayFromLS);
 
   return parsedExpenseArrayFromLS;
+}
+
+// Function makes summary page link available only when it's a repeat user who has submitted valid income and expense data. 
+function summaryPageLink(splLinkElementId) {  
+  //spl = summaryPageLink
+  var splLinkElement = document.getElementById(splLinkElementId).textContent;
+
+  //Reference to solve whether Array exists: https://stackoverflow.com/questions/24403732/how-to-check-if-array-is-empty-or-does-not-exist
+  if (retrieveIncomeAmountFromLS() > 0 && Array.isArray(initialExpenseInputObject) && initialExpenseInputObject.length > 0) {
+    if (!splLinkElement) {      
+      elementCreator(splLinkElementId, 'a', 'Summary Page', 'href', './budgetoutput.html');
+    } else {
+      // do nothing
+    }
+  }
 }
