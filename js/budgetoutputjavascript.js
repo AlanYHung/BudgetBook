@@ -124,7 +124,6 @@ chartIncomeTotalData = ArrayTotaler(chartIncomeItemsArray);
 chartSpentTotalData = ArrayTotaler(chartCategorySpentData);
 categoryTotalofTotals = ArrayTotaler(chartCategoryTotalData);
 /* 
-
   chartCategoryLabels.push('Total');
   chartCategorySpentData.push(chartSpentTotalData);
   chartCategoryTotalData.push(categoryTotalofTotals);
